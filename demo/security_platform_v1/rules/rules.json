@@ -1,0 +1,40 @@
+{
+  "rules": [
+    {
+      "id": 1,
+      "name": "steady_step: delta<=1000 per axis",
+      "max_abs_delta": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "kind": "max_delta"
+    },
+    {
+      "id": 2,
+      "name": "emergency_step: delta<=4000 per axis",
+      "max_abs_delta": [
+        4000,
+        4000,
+        4000,
+        4000,
+        4000,
+        4000,
+        4000,
+        4000
+      ],
+      "kind": "max_delta"
+    }
+  ],
+  "meta": {
+    "model": "security_platform_v1",
+    "rule_kinds": {
+      "max_delta": "hard constraint: per-axis |Δ| <= max_abs_delta"
+    }
+  }
+}

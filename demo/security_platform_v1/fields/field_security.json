@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "name": "trust_vs_policy",
+  "selector": {
+    "core_id": 1
+  },
+  "x_proj": 1,
+  "y_proj": 2,
+  "grid": 5
+}

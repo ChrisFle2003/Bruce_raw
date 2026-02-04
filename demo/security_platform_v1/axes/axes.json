@@ -1,0 +1,47 @@
+{
+  "scale": {
+    "min": -10000,
+    "max": 10000
+  },
+  "axes": [
+    {
+      "negative": "untrusted",
+      "positive": "trusted"
+    },
+    {
+      "negative": "weak_auth",
+      "positive": "strong_auth"
+    },
+    {
+      "negative": "policy_corrupt",
+      "positive": "policy_valid"
+    },
+    {
+      "negative": "low_load",
+      "positive": "high_load"
+    },
+    {
+      "negative": "benign",
+      "positive": "anomalous"
+    },
+    {
+      "negative": "contained",
+      "positive": "wide_blast"
+    },
+    {
+      "negative": "low_risk",
+      "positive": "high_risk"
+    },
+    {
+      "negative": "noncompliant",
+      "positive": "compliant"
+    }
+  ],
+  "meta": {
+    "model": "security_platform_v1",
+    "notes": [
+      "Domain-specific axes for deterministic security platform policy.",
+      "Negative/positive labels are descriptive only; the core uses numeric vectors only."
+    ]
+  }
+}
