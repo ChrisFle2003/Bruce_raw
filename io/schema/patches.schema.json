@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:patches_jsonl_v1",
+  "title": "Bruce v4 Patches (JSONL)",
+  "type": "object",
+  "required": ["op"],
+  "properties": {
+    "op": {"type": "string", "enum": ["add_state", "add_rule"]},
+    "id": {"type": "integer", "minimum": 0},
+    "core_id": {"type": "integer", "minimum": 0},
+    "vector": {"type": "array", "items": {"type": "integer"}},
+    "name": {"type": "string"},
+    "max_abs_delta": {"type": "array", "items": {"type": "integer", "minimum": 0}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "core_1_grid",
+  "selector": { "core_id": 1 },
+  "x_proj": 1,
+  "y_proj": 2,
+  "grid": 5
+}

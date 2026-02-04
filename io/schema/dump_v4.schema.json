@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:dump_v1",
+  "title": "Bruce v4 Dump/Backup Schema (v1)",
+  "type": "object",
+  "required": ["cores","axes","states","rules"],
+  "properties": {
+    "cores": {
+      "type": "array",
+      "items": {"type": "object", "required": ["id","name"], "properties": {"id": {"type":"integer"}, "name": {"type":"string"}}}
+    },
+    "axes": {
+      "type": "object",
+      "required": ["scale","items"],
+      "properties": {
+        "scale": {"type":"object","required":["min","max"],"properties":{"min":{"type":"integer"},"max":{"type":"integer"}}},
+        "items": {"type":"array","items":{"type":"object","required":["negative","positive"],"properties":{"negative":{"type":"string"},"positive":{"type":"string"}}}}
+      }
+    },
+    "states": {
+      "type": "array",
+      "items": {"type":"object","required":["id","core_id","vector"],"properties":{"id":{"type":"integer"},"core_id":{"type":"integer"},"vector":{"type":"array","items":{"type":"integer"}}}}
+    },
+    "rules": {
+      "type": "array",
+      "items": {"type":"object","required":["id","name","max_abs_delta"],"properties":{"id":{"type":"integer"},"name":{"type":"string"},"max_abs_delta":{"type":"array","items":{"type":"integer"}}}}
+    },
+    "view2d": {
+      "type": "object",
+      "required": ["x_axis","y_axis","grid","cells"],
+      "properties": {
+        "x_axis": {"type":"integer"},
+        "y_axis": {"type":"integer"},
+        "grid": {"type":"integer"},
+        "cells": {"type":"array"}
+      }
+    },
+    "allowed": {
+      "type": "object",
+      "required": ["formula","from"],
+      "properties": {
+        "formula": {"type":"string"},
+        "from": {"type":"array"}
+      }
+    }
+  }
+}

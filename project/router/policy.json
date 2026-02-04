@@ -1,0 +1,7 @@
+{
+  "default_action_id": 3,
+  "routes": [
+    {"state_id": 1, "action_id": 1},
+    {"state_id": 2, "action_id": 2}
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "scale": {
+    "min": -10000,
+    "max": 10000
+  },
+  "axes": [
+    {
+      "negative": "analyse",
+      "positive": "execution"
+    },
+    {
+      "negative": "abstract",
+      "positive": "concrete"
+    },
+    {
+      "negative": "emotional",
+      "positive": "rational"
+    },
+    {
+      "negative": "social",
+      "positive": "technical"
+    },
+    {
+      "negative": "unstable",
+      "positive": "stable"
+    },
+    {
+      "negative": "risky",
+      "positive": "safe"
+    },
+    {
+      "negative": "slow",
+      "positive": "fast"
+    }
+  ],
+  "meta": {
+    "model": "life_physics_v1",
+    "interpretation": {
+      "axes_roles": [
+        {
+          "axis": 0,
+          "role": "directionality",
+          "meaning": "planning↔acting (metabolism of intention)",
+          "legacy": {
+            "neg": "analyse",
+            "pos": "execution"
+          }
+        },
+        {
+          "axis": 1,
+          "role": "grounding",
+          "meaning": "abstract↔concrete (contact with environment)",
+          "legacy": {
+            "neg": "abstract",
+            "pos": "concrete"
+          }
+        },
+        {
+          "axis": 2,
+          "role": "coherence",
+          "meaning": "emotional↔rational (signal↔structure)",
+          "legacy": {
+            "neg": "emotional",
+            "pos": "rational"
+          }
+        },
+        {
+          "axis": 3,
+          "role": "coupling",
+          "meaning": "social↔technical (agent↔mechanism)",
+          "legacy": {
+            "neg": "social",
+            "pos": "technical"
+          }
+        },
+        {
+          "axis": 4,
+          "role": "homeostasis",
+          "meaning": "unstable↔stable (self-stabilization)",
+          "legacy": {
+            "neg": "unstable",
+            "pos": "stable"
+          }
+        },
+        {
+          "axis": 5,
+          "role": "risk_management",
+          "meaning": "risky↔safe (damage avoidance)",
+          "legacy": {
+            "neg": "risky",
+            "pos": "safe"
+          }
+        },
+        {
+          "axis": 6,
+          "role": "throughput",
+          "meaning": "slow↔fast (response bandwidth)",
+          "legacy": {
+            "neg": "slow",
+            "pos": "fast"
+          }
+        }
+      ],
+      "derived_quantities": {
+        "stability_score": "w4*max(0,v[4]) + w5*max(0,v[5])",
+        "stress_score": "w4*max(0,-v[4]) + w5*max(0,-v[5])",
+        "activity_level": "w6*abs(v[6]) + w0*abs(v[0])",
+        "groundedness": "w1*max(0,v[1])",
+        "order_score": "w2*max(0,v[2]) + w3*max(0,v[3])"
+      },
+      "weights": {
+        "weight_scale": 100,
+        "w0": 50,
+        "w1": 60,
+        "w2": 70,
+        "w3": 70,
+        "w4": 100,
+        "w5": 100,
+        "w6": 40
+      },
+      "homeostasis_target": "0-vector (neutral on all axes)",
+      "notes": [
+        "Bruce-Core ignores this meta block; it is for explanation/viewer/selection only.",
+        "Roles are universal/abstract: stability + energy/throughput + coupling + coherence."
+      ]
+    }
+  }
+}

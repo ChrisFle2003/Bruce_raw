@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:states_v1",
+  "title": "Bruce v4 States",
+  "type": "object",
+  "required": ["states"],
+  "properties": {
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["core_id", "vector"],
+        "properties": {
+          "id": {"type": "integer", "minimum": 0},
+          "core_id": {"type": "integer", "minimum": 0},
+          "core_version": {"type": "string"},
+          "vector": {
+            "type": "array",
+            "items": {"type": "integer"}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

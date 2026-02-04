@@ -1,0 +1,78 @@
+{
+  "cores": [
+    {"id": 1, "name": "ACTION"},
+    {"id": 2, "name": "EMOTION"},
+    {"id": 3, "name": "OBJECT"}
+  ],
+  "axes": {
+    "scale": { "min": -10000, "max": 10000 },
+    "items": [
+      {"negative": "analyse", "positive": "execution"},
+      {"negative": "abstract", "positive": "concrete"},
+      {"negative": "emotional", "positive": "rational"},
+      {"negative": "social", "positive": "technical"},
+      {"negative": "unstable", "positive": "stable"},
+      {"negative": "risky", "positive": "safe"},
+      {"negative": "slow", "positive": "fast"}
+    ]
+  },
+  "states": [
+    {"id": 1, "core_id": 1, "core_version": "bruce_v6", "vector": [7000,6000,0,0,4000,0,6000]},
+    {"id": 2, "core_id": 1, "core_version": "bruce_v6", "vector": [-7000,-6000,6000,0,0,7000,-4000]},
+    {"id": 3, "core_id": 2, "core_version": "bruce_v6", "vector": [0,-2000,8000,-2000,2000,3000,0]}
+  ],
+  "rules": [
+    {"id": 1, "name": "delta<=2000 per axis", "max_abs_delta": [2000,2000,2000,2000,2000,2000,2000]},
+    {"id": 2, "name": "strict delta<=1000 per axis", "max_abs_delta": [1000,1000,1000,1000,1000,1000,1000]}
+  ],
+  "rules_core_version": "bruce_v6",
+  "projections": [
+    {"id": 1, "name": "axis0", "shift": 0, "clamp_min": -10000, "clamp_max": 10000, "weights": [1,0,0,0,0,0,0]},
+    {"id": 2, "name": "axis1", "shift": 0, "clamp_min": -10000, "clamp_max": 10000, "weights": [0,1,0,0,0,0,0]}
+  ],
+  "fields": [
+    {"id": 1, "name": "core_1_grid", "selector": {"core_id": 1}, "x_proj": 1, "y_proj": 2, "grid": 5}
+  ],
+  "br2": [
+    {"field_id": 1, "x_proj": 1, "y_proj": 2, "grid": 5, "cells": [
+      [[2],[],[],[],[]],
+      [[],[],[],[],[]],
+      [[],[],[],[],[]],
+      [[],[],[],[],[1]],
+      [[],[],[],[],[]]
+    ], "resonance": [
+      [-2,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,2],
+      [0,0,0,0,0]
+    ]}
+  ],
+  "snapshot": {
+    "schema_version": "bruce_v5_snapshot_v1",
+    "epoch": 0,
+    "build_hash": "b3a37900b218bce4ca271f550486ca53c6268be320e599a22e09036775c5233c",
+    "counts": {"axes_n": 7, "states_count": 3, "rules_count": 2, "fields_count": 1, "projections_count": 2}
+  },
+  "view2d": {
+    "x_axis": 0,
+    "y_axis": 0,
+    "grid": 5,
+    "cells": [
+      [[2],[],[],[],[]],
+      [[],[],[],[],[]],
+      [[],[],[3],[],[]],
+      [[],[],[],[],[]],
+      [[],[],[],[],[1]]
+    ]
+  }
+,
+  "allowed": {
+    "formula": "allow(from,to,rule): for all axes i: |to[i]-from[i]| <= rule.max_abs_delta[i]",
+    "from": [
+      {"from_id": 1, "edges": []},
+      {"from_id": 2, "edges": []},
+      {"from_id": 3, "edges": []}
+    ]
+  }
+}

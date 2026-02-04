@@ -1,0 +1,68 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "core_id": 1,
+      "vector": [
+        7000,
+        6000,
+        0,
+        0,
+        4000,
+        0,
+        6000
+      ],
+      "tags": {
+        "stability": 4000,
+        "stress": 0,
+        "activity": 5900
+      },
+      "core_version": "bruce_v6"
+    },
+    {
+      "id": 2,
+      "core_id": 1,
+      "vector": [
+        -7000,
+        -6000,
+        6000,
+        0,
+        0,
+        7000,
+        -4000
+      ],
+      "tags": {
+        "stability": 7000,
+        "stress": 0,
+        "activity": 5100
+      },
+      "core_version": "bruce_v6"
+    },
+    {
+      "id": 3,
+      "core_id": 2,
+      "vector": [
+        0,
+        -2000,
+        8000,
+        -2000,
+        2000,
+        3000,
+        0
+      ],
+      "tags": {
+        "stability": 5000,
+        "stress": 0,
+        "activity": 0
+      },
+      "core_version": "bruce_v6"
+    }
+  ],
+  "meta": {
+    "model": "life_physics_v1",
+    "notes": [
+      "States remain the only numeric truth used by the core.",
+      "Tags are observer-only summaries derived from vectors."
+    ]
+  }
+}

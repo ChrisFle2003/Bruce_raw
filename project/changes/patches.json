@@ -1,0 +1,32 @@
+[
+  {
+    "op": "add_state",
+    "id": 1001,
+    "core_id": 1,
+    "vector": [
+      0,
+      0,
+      0,
+      0,
+      8000,
+      8000,
+      0
+    ],
+    "reason_tag": "homeostasis_anchor"
+  },
+  {
+    "op": "add_rule",
+    "id": 1001,
+    "name": "delta<=1500 per axis (balanced)",
+    "max_abs_delta": [
+      1500,
+      1500,
+      1500,
+      1500,
+      1500,
+      1500,
+      1500
+    ],
+    "reason_tag": "bounded_dynamics"
+  }
+]

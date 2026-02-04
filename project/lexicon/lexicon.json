@@ -1,0 +1,10 @@
+{
+  "terms": [
+    {"term":"do",    "state_id": 1},
+    {"term":"think", "state_id": 2},
+    {"term":"live",  "state_id": 3}
+  ],
+  "policy": {
+    "unknown": "ignore"
+  }
+}

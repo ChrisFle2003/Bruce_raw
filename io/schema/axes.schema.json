@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:axes_v1",
+  "title": "axes.json",
+  "type": "object",
+  "required": ["scale", "axes"],
+  "properties": {
+    "scale": {
+      "type": "object",
+      "required": ["min", "max"],
+      "properties": {
+        "min": {"type": "integer"},
+        "max": {"type": "integer"}
+      },
+      "additionalProperties": true
+    },
+    "axes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["negative", "positive"],
+        "properties": {
+          "negative": {"type": "string"},
+          "positive": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

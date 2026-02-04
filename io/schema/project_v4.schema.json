@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:project_v1",
+  "title": "Bruce v4 Project Schema (v1)",
+  "type": "object",
+  "description": "Project map for Bruce v4. This schema is informational; the core remains deterministic and numeric.",
+  "properties": {
+    "axes": {"type": "string"},
+    "states": {"type": "string"},
+    "rules": {"type": "string"},
+    "cores": {"type": "string"},
+    "changes": {"type": "string"},
+    "meta": {"type": "string"}
+  }
+}

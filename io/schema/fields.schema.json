@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v5:fields_manifest_v1",
+  "title": "Bruce v5 Fields Manifest",
+  "type": "object",
+  "required": ["files"],
+  "properties": {
+    "files": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

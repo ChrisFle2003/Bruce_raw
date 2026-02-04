@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v5:field_v1",
+  "title": "Bruce v5 Field Definition",
+  "type": "object",
+  "required": ["id", "selector", "x_proj", "y_proj", "grid"],
+  "properties": {
+    "id": {"type": "integer", "minimum": 0},
+    "name": {"type": "string"},
+    "selector": {
+      "type": "object",
+      "required": ["core_id"],
+      "properties": {
+        "core_id": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "x_proj": {"type": "integer"},
+    "y_proj": {"type": "integer"},
+    "grid": {"type": "integer", "const": 5}
+  },
+  "additionalProperties": false
+}

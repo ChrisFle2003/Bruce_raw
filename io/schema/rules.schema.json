@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:rules_v1",
+  "title": "Bruce v4 Rules",
+  "type": "object",
+  "required": ["rules"],
+  "properties": {
+    "core_version": {"type": "string"},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "max_abs_delta"],
+        "properties": {
+          "id": {"type": "integer", "minimum": 0},
+          "name": {"type": "string"},
+          "max_abs_delta": {
+            "type": "array",
+            "items": {"type": "integer", "minimum": 0}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

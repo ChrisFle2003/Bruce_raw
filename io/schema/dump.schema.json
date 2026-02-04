@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bruce:v4:dump_v1",
+  "title": "Bruce v4 Dump/Backup",
+  "type": "object",
+  "required": ["axes", "states", "rules"],
+  "properties": {
+    "cores": {"type": "array"},
+    "axes": {"type": "object"},
+    "states": {"type": "array"},
+    "rules": {"type": "array"},
+    "view2d": {"type": "object"},
+    "allowed": {"type": "object"}
+  },
+  "additionalProperties": true
+}

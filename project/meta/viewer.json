@@ -1,0 +1,56 @@
+{
+  "schema": "bruce_v4_code_life_v1",
+  "generated_utc": "2025-12-23T08:10:56Z",
+  "principle": "Option1: life = bounded dynamics + homeostasis + energy budget (all deterministic).",
+  "functions": {
+    "l1_distance": "Σ |a[i]-b[i]|",
+    "energy_cost": {
+      "formula": "Σ abs(Δ[i]) * weight[i]",
+      "weights": [
+        200,
+        200,
+        150,
+        150,
+        400,
+        400,
+        100
+      ]
+    },
+    "stability_score": {
+      "formula": "max(0,v[4]) + max(0,v[5])",
+      "axes": [
+        4,
+        5
+      ]
+    },
+    "stress_score": {
+      "formula": "max(0,-v[4]) + max(0,-v[5])",
+      "axes": [
+        4,
+        5
+      ]
+    },
+    "homeostasis_target": {
+      "vector": "all zeros"
+    }
+  },
+  "transition_policy": {
+    "hard_constraint": "must satisfy at least one rules[].max_abs_delta (max_delta rule)",
+    "selection_score": "stress_score(to) + lambda_energy*energy_cost(Δ) + lambda_distance*l1_distance(from,to)",
+    "lambdas": {
+      "lambda_energy": {
+        "scale": 1000000,
+        "value": 1
+      },
+      "lambda_distance": {
+        "scale": 10000,
+        "value": 1
+      }
+    },
+    "tie_break": "lowest state_id"
+  },
+  "lexicon_policy": {
+    "no_guessing": "if term not in lexicon -> UNKNOWN",
+    "rendering": "vector -> nearest state by l1_distance within same core"
+  }
+}

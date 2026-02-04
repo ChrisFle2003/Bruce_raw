@@ -1,0 +1,57 @@
+{
+  "rules": [
+    {
+      "id": 1,
+      "name": "delta<=2000 per axis",
+      "max_abs_delta": [
+        2000,
+        2000,
+        2000,
+        2000,
+        2000,
+        2000,
+        2000
+      ],
+      "kind": "max_delta"
+    },
+    {
+      "id": 2,
+      "name": "strict delta<=1000 per axis",
+      "max_abs_delta": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "kind": "max_delta"
+    }
+  ],
+  "meta": {
+    "model": "life_physics_v1",
+    "rule_kinds": {
+      "max_delta": "hard constraint: per-axis |Δ| <= max_abs_delta",
+      "homeostasis_bias": "soft preference: prefer moves that reduce |v| toward 0 on axes 4/5",
+      "energy_budget": "soft/hard: limit energy_cost(Δ) <= budget"
+    },
+    "energy_cost": "Σ (abs(Δ[i]) * weight[i])",
+    "energy_weights": [
+      200,
+      200,
+      150,
+      150,
+      400,
+      400,
+      100
+    ],
+    "default_budget": 2500000,
+    "homeostasis_axes": [
+      4,
+      5
+    ],
+    "homeostasis_prefer": "choose allowed transition with minimal (stress_score(to)+energy_cost(Δ))"
+  },
+  "core_version": "bruce_v6"
+}

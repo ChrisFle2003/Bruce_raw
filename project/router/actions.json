@@ -1,0 +1,7 @@
+{
+  "actions": [
+    {"action_id": 1, "name": "DO_NOW"},
+    {"action_id": 2, "name": "THINK_MORE"},
+    {"action_id": 3, "name": "ASK_HUMAN"}
+  ]
+}

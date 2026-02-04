@@ -1,0 +1,7 @@
+{
+  "cores": [
+    { "id": 1, "name": "ACTION" },
+    { "id": 2, "name": "EMOTION" },
+    { "id": 3, "name": "OBJECT" }
+  ]
+}
